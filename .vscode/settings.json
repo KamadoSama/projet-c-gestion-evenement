@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.rmd": "markdown",
+        "saisie.h": "c",
+        "main.C": "cpp"
+    }
+}
