@@ -2,7 +2,7 @@
 
 ## Description
 
-Ce projet est une application C qui utilise Python pour générer des graphiques à partir de données stockées dans une base de données MySQL.
+Ce projet est une application C qui permet de gérer des événement (mariage, anniversaire,cinéma). Il utilise Python pour générer des graphiques à partir de données stockées dans une base de données MySQL.
 
 ## Installation
 
