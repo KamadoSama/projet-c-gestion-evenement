@@ -18,15 +18,17 @@ cursor.execute(query)
 # Récupération des résultats
 noms_plats = []
 nombre_commandes = []
-for (nom, nombre) in cursor:
+couleurs = ['r', 'g', 'b', 'y', 'm', 'c']  # liste des couleurs
+for i, (nom, nombre) in enumerate(cursor):
     noms_plats.append(nom)
     nombre_commandes.append(nombre)
+    couleur = couleurs[i % len(couleurs)]  # récupère la couleur correspondante
+    plt.bar(nom, nombre, color=couleur)
 
 # Fermeture de la connexion à la base de données
 cursor.close()
 cnx.close()
 
 # Affichage de l'histogramme
-plt.bar(noms_plats, nombre_commandes)
 plt.xticks(rotation=90)
 plt.show()

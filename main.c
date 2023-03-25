@@ -87,7 +87,18 @@ int main(void){
                 if(strcmp(nouveauOuAncien, "O") == 0){
                     User * user = saisieUser();
                     createUser(db, user);
-                    
+                    listerEvent(db);
+                    printf("Choisir un event:");
+                    scanf("%s",eventLabel);
+                    while(getchar() != '\n');
+                    getPlatByEventLabel(db, eventLabel);
+                    printf("Choisir un plat:");
+                    scanf("%s",platLabel);    
+                    Plat * plat = getPlatByLabel(db,platLabel);
+                    Place* place = saisiePlace(); 
+                    Event * event = getEventByLabel(db, eventLabel);
+                    createPlace(db,place,event);
+                    createReservation(db, user, place,plat);
                 }else{
                     User * user = authenUser();
                     if(authentiferUser(db, user)){
@@ -151,7 +162,7 @@ int main(void){
                             i++;
                             printf("Voulez vous créer un autre Film Oui(O) Non (N):");
                             scanf("%s", saisirPlusieurPlat);
-                        };
+                        }
                         }
                     }
                 }
