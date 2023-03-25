@@ -44,7 +44,7 @@ int main(void){
             case 1:{
                 printf("êtes vous nouveau oui (O) ou Non (N):");
                 scanf("%s",nouveauOuAncien);
-                printf("%s",nouveauOuAncien);
+                
                 if(strcmp(nouveauOuAncien, "O") == 0){
                     User * user = saisieUser();
                     createUser(db, user);
@@ -84,7 +84,6 @@ int main(void){
                 char platLabel[20];
                 printf("êtes vous nouveau oui (O) ou Non (N):");
                 scanf("%s",nouveauOuAncien);
-                printf("%s",nouveauOuAncien);
                 if(strcmp(nouveauOuAncien, "O") == 0){
                     User * user = saisieUser();
                     createUser(db, user);
@@ -122,8 +121,7 @@ int main(void){
             }
             case 3 :{ 
                 printf("êtes vous nouveau oui (O) ou Non (N):");
-                scanf("%s",nouveauOuAncien);
-                printf("%s",nouveauOuAncien);
+                scanf("%s",nouveauOuAncien);    
                 if(strcmp(nouveauOuAncien, "O") == 0){
                     User * user = saisieUser();
                     createUser(db, user);
@@ -172,8 +170,7 @@ int main(void){
             case 4 :{
                     
                 printf("êtes vous nouveau oui (O) ou Non (N):");
-                scanf("%s",nouveauOuAncien);
-                printf("%s",nouveauOuAncien);
+                scanf("%s",nouveauOuAncien);     
                 if(strcmp(nouveauOuAncien, "O") == 0){
                     User * user = saisieUser();
                     createUser(db, user);
@@ -189,8 +186,7 @@ int main(void){
                     User * user1 =  getUserByFirstEmail(db,user->email);
                     Session * session = getSessionByFilm(db,film); 
                     Ticket * ticket = saisieTicket();
-                    createTicket(db,ticket,session,user1);                   
-                        
+                    createTicket(db,ticket,session,user1);                                          
                 }else{
                     User * user = authenUser();
                     if(authentiferUser(db, user)){
