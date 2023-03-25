@@ -2,6 +2,7 @@
 #include <string.h>
 #include "struc.h"
 #include <mysql/mysql.h>
+
 User *createUser(MYSQL *db, User *user)
 {
      MYSQL_RES *result = NULL;
@@ -77,8 +78,7 @@ Event * getEventByLabel(MYSQL *db,char *eventLabel){
     if (mysql_query(db, query)) {
         fprintf(stderr, "%s\n", mysql_error(db));
         exit(1);
-    }
-
+     }
     MYSQL_RES *result = mysql_store_result(db);
 
     if (!result) {
@@ -138,14 +138,14 @@ Plat * getPlatByLabel(MYSQL *db,char * platLabel){
     return plat;
 }
 
-User*getUserByFirstName(MYSQL *db, char *first_name) {
+User*getUserByFirstEmail(MYSQL *db, char *email) {
     char query[100];
-    sprintf(query, "SELECT * FROM user WHERE last_name='%s'", first_name);
+    sprintf(query, "SELECT * FROM user WHERE email='%s'", email);
 
     if (mysql_query(db, query)) {
         fprintf(stderr, "%s\n", mysql_error(db));
         exit(1);
-    }
+     }
 
     MYSQL_RES *result = mysql_store_result(db);
 
@@ -157,7 +157,7 @@ User*getUserByFirstName(MYSQL *db, char *first_name) {
     MYSQL_ROW row = mysql_fetch_row(result);
 
     if (!row) {
-        printf("Aucun utilisateur trouvé pour le nom d'utilisateur %s\n", first_name);
+        printf("Aucun utilisateur trouvé pour le nom d'utilisateur %s\n", email);
         mysql_free_result(result);
         return NULL;
     }
@@ -175,13 +175,13 @@ User*getUserByFirstName(MYSQL *db, char *first_name) {
     return user;
 }
 
-bool *authentiferUser(MYSQL *db, User *user)
+bool authentiferUser(MYSQL *db, User *user)
 {
      MYSQL_RES *result = NULL;
      MYSQL_ROW row;
      int i = 0;
      char query[1000];
-     sprintf(query, "select * from user where last_name = \"%s\" and password = \"%s\" ",user->firstName, user->password);
+     sprintf(query, "select * from user where email = \"%s\" and password = \"%s\" ",user->email, user->password);
      mysql_query(db, query);
      result = mysql_store_result(db);
      row = mysql_fetch_row(result);
@@ -212,37 +212,69 @@ Event *createEvent(MYSQL *db, Event *event)
      mysql_free_result(result);
 }
 
-User *getUsers(MYSQL *db)
-{
-     char query[] = "select * from user";
-     User *userTable =malloc(100 * sizeof(User));
-     MYSQL_RES *result = NULL;
-     MYSQL_ROW row;
-     unsigned int i = 0;
-     unsigned int num_champs = 0;
-     unsigned long *lengths;
-     mysql_query(db, query);
-     result = mysql_store_result(db);
-     num_champs = mysql_num_fields(result);
-     while ((row = mysql_fetch_row(result))){
-          lengths = mysql_fetch_lengths(result);
-          sprintf(userTable[i].firstName, "%s", row[1]);
-          sprintf(userTable[i].lastName, "%s", row[2]);
-          sprintf(userTable[i].rule, "%s", row[3]);
-          sprintf(userTable[i].email, "%s", row[4]);
-          sprintf(userTable[i].password, "%s", row[5]);
-          userTable[i].id = atoi(row[0]);
-          i++;
-      }
-      return userTable;
+void getFilmByDate(MYSQL *db, char *date) {
+    char query[1000];
+    sprintf(query, "SELECT film.titre, film.description, film.auteur FROM film INNER JOIN session ON film.ses_id=session.id WHERE session.date_session=\"%s\"", date);
+    if (mysql_query(db, query)) {
+        fprintf(stderr, "%s\n", mysql_error(db));
+    } else {
+        MYSQL_RES *result = mysql_store_result(db);
+        if (result == NULL) {
+            fprintf(stderr, "%s\n", mysql_error(db));
+        } else {
+            MYSQL_FIELD *field;
+            int num_fields = mysql_num_fields(result);
+            while ((field = mysql_fetch_field(result))) {
+                if (field->name != NULL && (strcmp(field->name, "titre") == 0 || strcmp(field->name, "description") == 0 || strcmp(field->name, "auteur") == 0)) {
+                    printf("%-30s|", field->name); //ajout de la largeur de champ pour éviter le décalage
+                }
+            }
+            printf("\n");
+            MYSQL_ROW row;
+            while ((row = mysql_fetch_row(result))) {
+                printf("%-30s|%-30s|%-30s\n", row[0], row[1], row[2]); //ajout de la largeur de champ pour éviter le décalage
+            }
+            mysql_free_result(result);
+        }
+    }
 }
-Ticket *createTicket(MYSQL *db,Ticket *ticket, Event * event, User *user)
+Session * getSessionByFilm(MYSQL *db,char *film){
+     char query[1000];
+     sprintf(query, "SELECT * FROM session INNER JOIN film ON film.ses_id=session.id WHERE film.titre=\"%s\"", film);
+
+     if (mysql_query(db, query)) {
+        fprintf(stderr, "%s\n", mysql_error(db));
+        exit(1);
+     }
+     MYSQL_RES *result = mysql_store_result(db);
+
+     if (!result) {
+        fprintf(stderr, "%s\n", mysql_error(db));
+        exit(1);
+     }
+
+     MYSQL_ROW row = mysql_fetch_row(result);
+
+     if (!row) {
+        printf("Aucun film de ce titre%s\n", film);
+        mysql_free_result(result);
+        return NULL;
+     }
+     Session *session = malloc(sizeof(Session));
+     sprintf(session->name, "%s" ,row[1]);
+     sprintf(session->dateSession, "%s",row[2]);
+     session->id = atoi(row[0]);
+     mysql_free_result(result);
+     return session;
+}
+
+Ticket *createTicket(MYSQL *db,Ticket *ticket, Session * session, User *user)
 {
      MYSQL_RES *result = NULL;
      MYSQL_ROW row;
      int i = 0;
      char query[1000];
-     sprintf(query, "insert into ticket (use_id, eve_id, number, date_ticket) values(\"%d\", \"%d\", \"%d\",NOW())", user->id, event->id, ticket->number);
+     sprintf(query, "insert into ticket (use_id, ses_id, number, date_ticket) values(\"%d\", \"%d\", \"%d\",NOW())", user->id, session->id, ticket->number);
      mysql_query(db, query);
      char query2[] = "select last_insert_id()";
      mysql_query(db, query2);
@@ -250,7 +282,7 @@ Ticket *createTicket(MYSQL *db,Ticket *ticket, Event * event, User *user)
      row = mysql_fetch_row(result);
      ticket->id = atoi(row[0]);
      ticket->user = user;
-     ticket->event= event;
+     ticket->session= session;
      return ticket;
 }
 
@@ -304,19 +336,19 @@ Place * createPlace(MYSQL * db, Place *  place, Event * event){
      return place;
 }
 
-Session * createSession(MYSQL * db,Session * session,  Event *  event){
+Session * createSession(MYSQL * db,Session * session){
      MYSQL_RES *result = NULL;
      MYSQL_ROW row;
      int i = 0;
      char query[1000];
-     sprintf(query, "insert into session (eve_id, name, date_session) values(\"%d\", \"%s\",\"%s\")", event->id, session->name, session->dateSession);
+     sprintf(query, "insert into session (name, date_session) values(\"%s\",\"%s\")", session->name, session->dateSession);
      mysql_query(db, query);
      char query2[] = "select last_insert_id()";
      mysql_query(db, query2);
      result = mysql_store_result(db);
      row = mysql_fetch_row(result);
      session->id = atoi(row[0]);
-     session->event = event;
+     
      return session;
 }
 
@@ -335,7 +367,6 @@ Film * createFilm(MYSQL * db,Film * film,  Session *  session){
      film->session = session;
      return film;
 }
-
 
 Event *updateEvent(MYSQL *db, Event *event)
 {
@@ -429,7 +460,7 @@ Place ** getPlaceByEventId(MYSQL *db, Event * event){
       }
      return placeTable;   
 }*/
-Ticket * getTicketByUserId(MYSQL *db, User * user, Event **event){
+/*Ticket * getTicketByUserId(MYSQL *db, User * user, Event **event){
      MYSQL_RES *result = NULL;
      MYSQL_ROW row;
      unsigned int i = 0;
@@ -482,5 +513,5 @@ Film ** getFilmBySessionId(MYSQL *db, Session * session){
           i++;
       }
      return filmTable;   
-}
+}*/
 

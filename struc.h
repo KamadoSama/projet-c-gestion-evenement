@@ -39,7 +39,7 @@ typedef struct ticket
     int number;
     char dateTicket[100];
     User* user;
-    Event * event;
+    Session * session;
 } Ticket;
 
 typedef struct event 

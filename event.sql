@@ -214,13 +214,13 @@ DROP TABLE IF EXISTS `ticket`;
 CREATE TABLE `ticket` (
   `id` int NOT NULL AUTO_INCREMENT,
   `use_id` int DEFAULT NULL,
-  `eve_id` int DEFAULT NULL,
+  `ses_id` int DEFAULT NULL,
   `number` int DEFAULT NULL,
   `date_ticket` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_ticket_relation__user` (`use_id`),
-  KEY `fk_ticket_relation__event` (`eve_id`),
-  CONSTRAINT `fk_ticket_relation__event` FOREIGN KEY (`eve_id`) REFERENCES `event` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  KEY `fk_ticket_relation__event` (`ses_id`),
+  CONSTRAINT `fk_ticket_relation__session` FOREIGN KEY (`ses_id`) REFERENCES `session` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `fk_ticket_relation__user` FOREIGN KEY (`use_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;

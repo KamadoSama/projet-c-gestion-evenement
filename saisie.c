@@ -34,8 +34,8 @@ User* authenUser(){
     printf("Se connecter\n");
     User *user = malloc(sizeof(User));
     
-    printf("Prénom : ");
-    scanf("%s", user->firstName);
+    printf("email : ");
+    scanf("%s", user->email);
     while(getchar() != '\n');
     
     printf("Mot de passe : ");
@@ -118,11 +118,9 @@ Ticket *saisieTicket(){
     printf("Création d'un ticket\n");
     Ticket *ticket = malloc(sizeof(Ticket));
     printf("Numéro : ");
-    scanf("%d", &ticket->number);
-    printf("Date (format jj/mm/aaaa) : ");
-    scanf("%s", ticket->dateTicket);
+    scanf("%d", &ticket->number); 
     ticket->user = NULL;
-    ticket->event = NULL;
+    ticket->session = NULL;
     return ticket;
 }
 
