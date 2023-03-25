@@ -23,10 +23,11 @@ int main(void){
         exit(1);
     }
     printf("Bd connecté\n");
-    
+    char film[50];
     int choixMenu;
     char nouveauOuAncien[1];
     char saisirPlusieurPlat[1];
+    char saisirPlusieurFilm[1];
     do{
         printf("\n");
         printf("1- Organiser un événment\n");
@@ -117,22 +118,44 @@ int main(void){
                         createReservation(db, user1, place,plat);
                     }
                 }
-                case 3 :{
-                    printf("êtes vous nouveau oui (O) ou Non (N):");
-                    scanf("%s",nouveauOuAncien);
-                    printf("%s",nouveauOuAncien);
-                    if(strcmp(nouveauOuAncien, "O") == 0){
-                        User * user = saisieUser();
-                        createUser(db, user);
+                break;
+            }
+            case 3 :{ 
+                printf("êtes vous nouveau oui (O) ou Non (N):");
+                scanf("%s",nouveauOuAncien);
+                printf("%s",nouveauOuAncien);
+                if(strcmp(nouveauOuAncien, "O") == 0){
+                    User * user = saisieUser();
+                    createUser(db, user);
+                    Film * film = saisieFilm();
+                    Session * session = saisieSession();
+                    createSession(db,session);
+                    createFilm(db, film,session);
+                    int i = 0;
+                    printf("Voulez vous créer un autre Film Oui(O) Non (N):");
+                    scanf("%s", saisirPlusieurPlat);
+                    while((strcmp(saisirPlusieurPlat, "O") == 0) || i<=3){
+                        Film * film = saisieFilm();
+                        Session * session = saisieSession();
+                        createSession(db,session);
+                        createFilm(db, film,session);
+                        i++;
+                        printf("Voulez vous créer un autre Film Oui(O) Non (N):");
+                        scanf("%s", saisirPlusieurPlat);
+                        while(getchar() != '\n');
+                    };
+                        
+                }else{
+                    User * user = authenUser();
+                    if(authentiferUser(db, user)){
                         Film * film = saisieFilm();
                         Session * session = saisieSession();
                         createSession(db,session);
                         createFilm(db, film,session);
                         int i = 0;
                         printf("Voulez vous créer un autre Film Oui(O) Non (N):");
-                        scanf("%s", saisirPlusieurPlat);
-                        while((strcmp(saisirPlusieurPlat, "O") == 0) || i<=3){
-                            
+                        scanf("%s", saisirPlusieurFilm);
+                        while((strcmp(saisirPlusieurFilm, "O") == 0) && i<=3){ 
                             while(getchar() != '\n');
                             Film * film = saisieFilm();
                             Session * session = saisieSession();
@@ -140,39 +163,37 @@ int main(void){
                             createFilm(db, film,session);
                             i++;
                             printf("Voulez vous créer un autre Film Oui(O) Non (N):");
-                            scanf("%s", saisirPlusieurPlat);
-                        };
-                        
-                    }else{
-                        User * user = authenUser();
-                        if(authentiferUser(db, user)){
-                            Film * film = saisieFilm();
-                        Session * session = saisieSession();
-                        createSession(db,session);
-                        createFilm(db, film,session);
-                        int i = 0;
-                        printf("Voulez vous créer un autre Film Oui(O) Non (N):");
-                        scanf("%s", saisirPlusieurPlat);
-                        while((strcmp(saisirPlusieurPlat, "O") == 0) && i<=3){ 
-                            while(getchar() != '\n');
-                            Film * film = saisieFilm();
-                            Session * session = saisieSession();
-                            createSession(db,session);
-                            createFilm(db, film,session);
-                            i++;
-                            printf("Voulez vous créer un autre Film Oui(O) Non (N):");
-                            scanf("%s", saisirPlusieurPlat);
-                        }
+                            scanf("%s", saisirPlusieurFilm);
                         }
                     }
                 }
-                case 4 :{
-                    printf("êtes vous nouveau oui (O) ou Non (N):");
-                    scanf("%s",nouveauOuAncien);
-                    printf("%s",nouveauOuAncien);
-                    if(strcmp(nouveauOuAncien, "O") == 0){
-                        User * user = saisieUser();
-                        createUser(db, user);
+                break;
+            }    
+            case 4 :{
+                    
+                printf("êtes vous nouveau oui (O) ou Non (N):");
+                scanf("%s",nouveauOuAncien);
+                printf("%s",nouveauOuAncien);
+                if(strcmp(nouveauOuAncien, "O") == 0){
+                    User * user = saisieUser();
+                    createUser(db, user);
+                    time_t t = time(NULL);
+                    struct tm tm = *localtime(&t);
+                    char date[20];
+                    sprintf(date, "%04d-%02d-%02d 00:00:00", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+                    printf("Date d'aujourd'hui : %s\n", date);
+                    getFilmByDate(db,date);
+                    printf("Choisir un film:");
+                    scanf("%s",film);
+                    while(getchar() != '\n');
+                    User * user1 =  getUserByFirstEmail(db,user->email);
+                    Session * session = getSessionByFilm(db,film); 
+                    Ticket * ticket = saisieTicket();
+                    createTicket(db,ticket,session,user1);                   
+                        
+                }else{
+                    User * user = authenUser();
+                    if(authentiferUser(db, user)){
                         time_t t = time(NULL);
                         struct tm tm = *localtime(&t);
                         char date[20];
@@ -180,51 +201,26 @@ int main(void){
                         printf("Date d'aujourd'hui : %s\n", date);
                         getFilmByDate(db,date);
                         printf("Choisir un film:");
-                        scanf("%s",eventLabel);
+                        scanf("%s",film);
                         while(getchar() != '\n');
                         User * user1 =  getUserByFirstEmail(db,user->email);
-                        Session * session = getSessionByFilm(db,eventLabel); 
+                        Session * session = getSessionByFilm(db,film); 
                         Ticket * ticket = saisieTicket();
-                        createTicket(db,ticket,session,user1);                   
-                        
-                    }else{
-                        User * user = authenUser();
-                        if(authentiferUser(db, user)){
-                            time_t t = time(NULL);
-                            struct tm tm = *localtime(&t);
-                            char date[20];
-                            sprintf(date, "%04d-%02d-%02d 00:00:00", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
-                            printf("Date d'aujourd'hui : %s\n", date);
-                            getFilmByDate(db,date);
-                            printf("Choisir un film:");
-                            scanf("%s",eventLabel);
-                            while(getchar() != '\n');
-                            User * user1 =  getUserByFirstEmail(db,user->email);
-                            Session * session = getSessionByFilm(db,eventLabel); 
-                            Ticket * ticket = saisieTicket();
-                            createTicket(db,ticket,session,user1);
-                        }
-                         
+                        createTicket(db,ticket,session,user1);
                     }
-                    
-                }
-                case 5:{
-                    Py_Initialize();
-
-                    // Ouverture du fichier Python
-                    FILE* fp = fopen("test_py.py", "r");
-
-                    // Exécution du code Python contenu dans le fichier
-                    PyRun_SimpleFile(fp, "test_py.py");
-
-                    // Fermeture du fichier
-                    fclose(fp);
-
-                    // Arrêt de l'interpréteur Python
-                    Py_Finalize();
                 }
                 break;
             }
+            case 5:{
+                Py_Initialize();
+                FILE* fp = fopen("test_py.py", "r");
+                PyRun_SimpleFile(fp, "test_py.py");
+                fclose(fp);
+                Py_Finalize();
+                break;
+            }
+            break;
+            
         }
     }while(choixMenu !=0);
     
