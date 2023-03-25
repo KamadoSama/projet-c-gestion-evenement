@@ -5,6 +5,7 @@
 #include <time.h>
 #include <ctype.h>
 #include <stddef.h>
+#include <python3.10/Python.h>
 #include "struc.h"
 #include "saisie.h"
 #include "function-bd.h"
@@ -195,6 +196,21 @@ int main(void){
                          
                     }
                     
+                }
+                case 5:{
+                    Py_Initialize();
+
+                    // Ouverture du fichier Python
+                    FILE* fp = fopen("test_py.py", "r");
+
+                    // Exécution du code Python contenu dans le fichier
+                    PyRun_SimpleFile(fp, "test_py.py");
+
+                    // Fermeture du fichier
+                    fclose(fp);
+
+                    // Arrêt de l'interpréteur Python
+                    Py_Finalize();
                 }
                 break;
             }
