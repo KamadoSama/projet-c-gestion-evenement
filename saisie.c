@@ -81,7 +81,7 @@ Plat * saisiePlat(){
 }
 
 Session *saisieSession(){
-    printf("Création d'une session\n");
+    printf("Création d'une session sous la forme (Heure debut - Heure fin) exemple 9h-12h \n");
     Session *session = malloc(sizeof(Session));
     printf("Nom : ");
     scanf("%s", session->name);
