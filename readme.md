@@ -1,8 +1,8 @@
-# Mon projet C
+# Gestion événement 
 
 ## Description
 
-Ce projet est une application C qui utilise Python pour générer des graphiques à partir de données stockées dans une base de données MySQL.
+Ce projet est une application C qui permet de gérer des événement (mariage, anniversaire,cinéma). Il utilise Python pour générer des graphiques à partir de données stockées dans une base de données MySQL.
 
 ## Installation
 
@@ -10,7 +10,7 @@ Ce projet est une application C qui utilise Python pour générer des graphiques
 2. Installer python-dev : `sudo apt-get install python-dev python3.10-dev`
 3. Installer matplotlib : `pip install matplotlib`
 4. Installer mysql-connector : `pip install mysql-connector-python`
-5. Recréer la base de données pour l'adapter au projet grâce à `./event.sql`
+5. Recréer la base de données pour l'adapter au projet grâce au fichier `event.sql`
 
 ## Exécution
 
