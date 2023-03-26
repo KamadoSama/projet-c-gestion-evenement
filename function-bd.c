@@ -1,8 +1,31 @@
+/**
+ * @file function-bd.c
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include "struc.h"
 #include <mysql/mysql.h>
 
+/**
+     @brief Créé un nouvel utilisateur dans la base de données.
+     Cette fonction prend en paramètre un objet MYSQL représentant la connexion à la base de données et un objet User contenant les informations du nouvel utilisateur à créer.
+     @param db Un objet MYSQL représentant la connexion à la base de données.
+     @param user Un objet User contenant les informations du nouvel utilisateur à créer.
+     @return Un pointeur vers un objet User représentant le nouvel utilisateur créé, ou NULL si une erreur s'est produite.
+     Exemple d'utilisation :
+     @code
+     MYSQL *db = mysql_init(NULL);
+     mysql_real_connect(db, "localhost", "user", "password", "database", 0, NULL, 0);
+     User *user = malloc(sizeof(User));
+     user->firstName = "John";
+     user->lastName = "Doe";
+     user->rule = "admin";
+     user->email = "johndoe@example.com";
+     user->password = "secret";
+     User *newUser = createUser(db, user);
+     @endcode
+*/
 User *createUser(MYSQL *db, User *user)
 {
      MYSQL_RES *resultat = NULL;
@@ -53,6 +76,14 @@ void listerEvent(MYSQL *db)
           }
      }
 }
+/**
+
+     @brief Récupère les plats associés à un événement en fonction de son label.
+     Cette fonction effectue une requête SQL pour récupérer les plats associés à un événement
+     en fonction de son label. Les résultats sont affichés à l'écran.
+     @param db Un pointeur vers une structure de connexion à la base de données MySQL.
+     @param eventLabel Le label de l'événement dont on souhaite récupérer les plats associés.
+*/
 void getPlatByEventLabel(MYSQL *db, char eventLabel[20])
 {
      char query[1000];
@@ -82,6 +113,13 @@ void getPlatByEventLabel(MYSQL *db, char eventLabel[20])
           }
      }
 }
+/**
+
+     @brief Obtient les plats associés à un événement donné par son étiquette.
+
+     @param db Un pointeur vers une connexion MySQL.
+
+*/
 
 Event *getEventByLabel(MYSQL *db, char *eventLabel)
 {
@@ -120,6 +158,15 @@ Event *getEventByLabel(MYSQL *db, char *eventLabel)
      mysql_free_result(resultat);
      return event;
 }
+/**
+ * @brief Recherche un plat dans la base de données par son nom.
+ * 
+ * @param db un pointeur vers la connexion MySQL
+ * @param platLabel le nom du plat recherché
+ * 
+ * @return un pointeur vers un objet Plat si le plat est trouvé, sinon NULL
+ */
+
 Plat *getPlatByLabel(MYSQL *db, char *platLabel)
 {
      char query[100];
@@ -404,25 +451,4 @@ Film *createFilm(MYSQL *db, Film *film, Session *session)
      film->id = atoi(champ[0]);
      film->session = session;
      return film;
-}
-
-Event *updateEvent(MYSQL *db, Event *event)
-{
-     MYSQL_RES *resultat = NULL;
-     MYSQL_ROW champ;
-     int i = 0;
-     char query[1000];
-     sprintf(query, "update event set type=\"%s\", place=\"%s\", date_event=\"%s\", label=\"%s\" where id=%d", event->type, event->lieu, event->dateEvent, event->label, event->id);
-     mysql_query(db, query);
-     return event;
-}
-
-void deleteEvent(MYSQL *db, Event *event)
-{
-     MYSQL_RES *resultat = NULL;
-     MYSQL_ROW champ;
-     int i = 0;
-     char query[1000];
-     sprintf(query, "delete from event where id=%d", event->id);
-     mysql_query(db, query);
 }

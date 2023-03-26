@@ -1,0 +1,755 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>doc: Référence du fichier function-bd.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">doc
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier function-bd.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;struc.h&quot;</code><br />
+<code>#include &lt;mysql/mysql.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de function-bd.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="function-bd_8c__incl.png" border="0" usemap="#afunction-bd_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a3c02e2ad6109da33dbb21de526f4b7b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structuser.html">User</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a3c02e2ad6109da33dbb21de526f4b7b4">createUser</a> (MYSQL *db, <a class="el" href="structuser.html">User</a> *<a class="el" href="structuser.html">user</a>)</td></tr>
+<tr class="memdesc:a3c02e2ad6109da33dbb21de526f4b7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créé un nouvel utilisateur dans la base de données. Cette fonction prend en paramètre un objet MYSQL représentant la connexion à la base de données et un objet User contenant les informations du nouvel utilisateur à créer.  <a href="function-bd_8c.html#a3c02e2ad6109da33dbb21de526f4b7b4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3c02e2ad6109da33dbb21de526f4b7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e06c1ce49cd7571cdb90e4061618418"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a4e06c1ce49cd7571cdb90e4061618418">listerEvent</a> (MYSQL *db)</td></tr>
+<tr class="memdesc:a4e06c1ce49cd7571cdb90e4061618418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la liste des événements dans la base de données. Cette fonction affiche la liste des événements stockés dans la base de données en utilisant le pointeur vers la connexion à la base de données passé en paramètre.  <a href="function-bd_8c.html#a4e06c1ce49cd7571cdb90e4061618418">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4e06c1ce49cd7571cdb90e4061618418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a644cab1c403dd4092fdbc0767cf150ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a644cab1c403dd4092fdbc0767cf150ac">getPlatByEventLabel</a> (MYSQL *db, char eventLabel[20])</td></tr>
+<tr class="memdesc:a644cab1c403dd4092fdbc0767cf150ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les plats associés à un événement en fonction de son label. Cette fonction effectue une requête SQL pour récupérer les plats associés à un événement en fonction de son label. Les résultats sont affichés à l'écran.  <a href="function-bd_8c.html#a644cab1c403dd4092fdbc0767cf150ac">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a644cab1c403dd4092fdbc0767cf150ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f9c336ca172e32f2491e17258be5cfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structevent.html">Event</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a1f9c336ca172e32f2491e17258be5cfe">getEventByLabel</a> (MYSQL *db, char *eventLabel)</td></tr>
+<tr class="memdesc:a1f9c336ca172e32f2491e17258be5cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtient les plats associés à un événement donné par son étiquette.  <a href="function-bd_8c.html#a1f9c336ca172e32f2491e17258be5cfe">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1f9c336ca172e32f2491e17258be5cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55eeb5c87b6273f8fa81236b92ce30f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplat.html">Plat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a55eeb5c87b6273f8fa81236b92ce30f6">getPlatByLabel</a> (MYSQL *db, char *platLabel)</td></tr>
+<tr class="memdesc:a55eeb5c87b6273f8fa81236b92ce30f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recherche un plat dans la base de données par son nom.  <a href="function-bd_8c.html#a55eeb5c87b6273f8fa81236b92ce30f6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a55eeb5c87b6273f8fa81236b92ce30f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af309ac5fd96b728c5c30f97ee4789ad3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structuser.html">User</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#af309ac5fd96b728c5c30f97ee4789ad3">getUserByFirstEmail</a> (MYSQL *db, char *email)</td></tr>
+<tr class="memdesc:af309ac5fd96b728c5c30f97ee4789ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère un utilisateur à partir de son adresse email.  <a href="function-bd_8c.html#af309ac5fd96b728c5c30f97ee4789ad3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af309ac5fd96b728c5c30f97ee4789ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7526464e6e5d68db08ee4b9ffec4d59b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a7526464e6e5d68db08ee4b9ffec4d59b">authentiferUser</a> (MYSQL *db, <a class="el" href="structuser.html">User</a> *<a class="el" href="structuser.html">user</a>)</td></tr>
+<tr class="memdesc:a7526464e6e5d68db08ee4b9ffec4d59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Authentifie un utilisateur dans la base de données. Cette fonction vérifie si les informations d'authentification de l'utilisateur passées en paramètre correspondent à un utilisateur dans la base de données. Si l'utilisateur est authentifié, la fonction renvoie true, sinon elle renvoie false.  <a href="function-bd_8c.html#a7526464e6e5d68db08ee4b9ffec4d59b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7526464e6e5d68db08ee4b9ffec4d59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795bf925a246abd3a1984e7dc733db7c"><td class="memItemLeft" align="right" valign="top"><a id="a795bf925a246abd3a1984e7dc733db7c"></a>
+<a class="el" href="structevent.html">Event</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createEvent</b> (MYSQL *db, <a class="el" href="structevent.html">Event</a> *<a class="el" href="structevent.html">event</a>)</td></tr>
+<tr class="separator:a795bf925a246abd3a1984e7dc733db7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1816267d81b64571aa0f732817072c44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a1816267d81b64571aa0f732817072c44">getFilmByDate</a> (MYSQL *db, char *date)</td></tr>
+<tr class="memdesc:a1816267d81b64571aa0f732817072c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère tous les films jouant à une certaine date.  <a href="function-bd_8c.html#a1816267d81b64571aa0f732817072c44">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1816267d81b64571aa0f732817072c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fbcb8a0708f6c621d6a861ad6001901"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsession.html">Session</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a0fbcb8a0708f6c621d6a861ad6001901">getSessionByFilm</a> (MYSQL *db, char *<a class="el" href="structfilm.html">film</a>)</td></tr>
+<tr class="memdesc:a0fbcb8a0708f6c621d6a861ad6001901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la session d'un film donné.  <a href="function-bd_8c.html#a0fbcb8a0708f6c621d6a861ad6001901">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0fbcb8a0708f6c621d6a861ad6001901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f9e83094f862431e498b600266f2fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structticket.html">Ticket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#ac2f9e83094f862431e498b600266f2fb">createTicket</a> (MYSQL *db, <a class="el" href="structticket.html">Ticket</a> *<a class="el" href="structticket.html">ticket</a>, <a class="el" href="structsession.html">Session</a> *<a class="el" href="structsession.html">session</a>, <a class="el" href="structuser.html">User</a> *<a class="el" href="structuser.html">user</a>)</td></tr>
+<tr class="memdesc:ac2f9e83094f862431e498b600266f2fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un nouveau ticket dans la base de données.  <a href="function-bd_8c.html#ac2f9e83094f862431e498b600266f2fb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac2f9e83094f862431e498b600266f2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9848ad4e4f50d1d693e2e8a8d6557dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#ab9848ad4e4f50d1d693e2e8a8d6557dd">createReservation</a> (MYSQL *db, <a class="el" href="structuser.html">User</a> *<a class="el" href="structuser.html">user</a>, <a class="el" href="structplace.html">Place</a> *<a class="el" href="structplace.html">place</a>, <a class="el" href="structplat.html">Plat</a> *<a class="el" href="structplat.html">plat</a>)</td></tr>
+<tr class="memdesc:ab9848ad4e4f50d1d693e2e8a8d6557dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une nouvelle réservation dans la base de données.  <a href="function-bd_8c.html#ab9848ad4e4f50d1d693e2e8a8d6557dd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab9848ad4e4f50d1d693e2e8a8d6557dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad85f2c9623c3c268cb933ec16a279598"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplat.html">Plat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#ad85f2c9623c3c268cb933ec16a279598">createPlat</a> (MYSQL *db, <a class="el" href="structplat.html">Plat</a> *<a class="el" href="structplat.html">plat</a>, <a class="el" href="structevent.html">Event</a> *<a class="el" href="structevent.html">event</a>)</td></tr>
+<tr class="memdesc:ad85f2c9623c3c268cb933ec16a279598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un nouveau plat dans la base de données.  <a href="function-bd_8c.html#ad85f2c9623c3c268cb933ec16a279598">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad85f2c9623c3c268cb933ec16a279598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8df4fb9e8e3dd4f7e5f5587e2d58b28d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplace.html">Place</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a8df4fb9e8e3dd4f7e5f5587e2d58b28d">createPlace</a> (MYSQL *db, <a class="el" href="structplace.html">Place</a> *<a class="el" href="structplace.html">place</a>, <a class="el" href="structevent.html">Event</a> *<a class="el" href="structevent.html">event</a>)</td></tr>
+<tr class="memdesc:a8df4fb9e8e3dd4f7e5f5587e2d58b28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une nouvelle place dans la base de données.  <a href="function-bd_8c.html#a8df4fb9e8e3dd4f7e5f5587e2d58b28d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8df4fb9e8e3dd4f7e5f5587e2d58b28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad51c39307f58e045defea599ab13192e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsession.html">Session</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#ad51c39307f58e045defea599ab13192e">createSession</a> (MYSQL *db, <a class="el" href="structsession.html">Session</a> *<a class="el" href="structsession.html">session</a>)</td></tr>
+<tr class="memdesc:ad51c39307f58e045defea599ab13192e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une nouvelle session dans la base de données.  <a href="function-bd_8c.html#ad51c39307f58e045defea599ab13192e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad51c39307f58e045defea599ab13192e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85cfa50a790ad4070a6e12846b111a61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structfilm.html">Film</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a85cfa50a790ad4070a6e12846b111a61">createFilm</a> (MYSQL *db, <a class="el" href="structfilm.html">Film</a> *<a class="el" href="structfilm.html">film</a>, <a class="el" href="structsession.html">Session</a> *<a class="el" href="structsession.html">session</a>)</td></tr>
+<tr class="memdesc:a85cfa50a790ad4070a6e12846b111a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un nouveau film dans la base de données. Cette fonction crée un nouveau film dans la base de données en utilisant les informations passées en paramètre. Si l'opération est réussie, la fonction renvoie le pointeur vers le film créé, sinon elle renvoie NULL.  <a href="function-bd_8c.html#a85cfa50a790ad4070a6e12846b111a61">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a85cfa50a790ad4070a6e12846b111a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a7526464e6e5d68db08ee4b9ffec4d59b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7526464e6e5d68db08ee4b9ffec4d59b">&#9670;&nbsp;</a></span>authentiferUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool authentiferUser </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structuser.html">User</a> *&#160;</td>
+          <td class="paramname"><em>user</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Authentifie un utilisateur dans la base de données. Cette fonction vérifie si les informations d'authentification de l'utilisateur passées en paramètre correspondent à un utilisateur dans la base de données. Si l'utilisateur est authentifié, la fonction renvoie true, sinon elle renvoie false. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Le pointeur vers la connexion à la base de données. </td></tr>
+    <tr><td class="paramname">user</td><td>Le pointeur vers la structure de l'utilisateur à authentifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si l'utilisateur est authentifié, false sinon. </dd></dl>
+
+</div>
+</div>
+<a id="a85cfa50a790ad4070a6e12846b111a61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85cfa50a790ad4070a6e12846b111a61">&#9670;&nbsp;</a></span>createFilm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfilm.html">Film</a>* createFilm </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfilm.html">Film</a> *&#160;</td>
+          <td class="paramname"><em>film</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsession.html">Session</a> *&#160;</td>
+          <td class="paramname"><em>session</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un nouveau film dans la base de données. Cette fonction crée un nouveau film dans la base de données en utilisant les informations passées en paramètre. Si l'opération est réussie, la fonction renvoie le pointeur vers le film créé, sinon elle renvoie NULL. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Le pointeur vers la connexion à la base de données. </td></tr>
+    <tr><td class="paramname">film</td><td>Le pointeur vers la structure du film à créer. </td></tr>
+    <tr><td class="paramname">session</td><td>Le pointeur vers la structure de la session à laquelle ajouter le film. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le pointeur vers la structure du film créé, ou NULL si l'opération a échoué. </dd></dl>
+
+</div>
+</div>
+<a id="a8df4fb9e8e3dd4f7e5f5587e2d58b28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8df4fb9e8e3dd4f7e5f5587e2d58b28d">&#9670;&nbsp;</a></span>createPlace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structplace.html">Place</a>* createPlace </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structplace.html">Place</a> *&#160;</td>
+          <td class="paramname"><em>place</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structevent.html">Event</a> *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée une nouvelle place dans la base de données. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Un pointeur vers la connexion de base de données. </td></tr>
+    <tr><td class="paramname">place</td><td>Un pointeur vers la place à créer. </td></tr>
+    <tr><td class="paramname">event</td><td>Un pointeur vers l'événement associé à la place. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers la place créée. </dd></dl>
+
+</div>
+</div>
+<a id="ad85f2c9623c3c268cb933ec16a279598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad85f2c9623c3c268cb933ec16a279598">&#9670;&nbsp;</a></span>createPlat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structplat.html">Plat</a>* createPlat </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structplat.html">Plat</a> *&#160;</td>
+          <td class="paramname"><em>plat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structevent.html">Event</a> *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un nouveau plat dans la base de données. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Un pointeur vers la connexion de base de données. </td></tr>
+    <tr><td class="paramname">plat</td><td>Un pointeur vers le plat à créer. </td></tr>
+    <tr><td class="paramname">event</td><td>Un pointeur vers l'événement associé au plat. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers le plat créé. </dd></dl>
+
+</div>
+</div>
+<a id="ab9848ad4e4f50d1d693e2e8a8d6557dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9848ad4e4f50d1d693e2e8a8d6557dd">&#9670;&nbsp;</a></span>createReservation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void createReservation </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structuser.html">User</a> *&#160;</td>
+          <td class="paramname"><em>user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structplace.html">Place</a> *&#160;</td>
+          <td class="paramname"><em>place</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structplat.html">Plat</a> *&#160;</td>
+          <td class="paramname"><em>plat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée une nouvelle réservation dans la base de données. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Un pointeur vers la connexion de base de données. </td></tr>
+    <tr><td class="paramname">user</td><td>Un pointeur vers l'utilisateur qui effectue la réservation. </td></tr>
+    <tr><td class="paramname">place</td><td>Un pointeur vers la place réservée. </td></tr>
+    <tr><td class="paramname">plat</td><td>Un pointeur vers le plat réservé. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad51c39307f58e045defea599ab13192e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad51c39307f58e045defea599ab13192e">&#9670;&nbsp;</a></span>createSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsession.html">Session</a>* createSession </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsession.html">Session</a> *&#160;</td>
+          <td class="paramname"><em>session</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée une nouvelle session dans la base de données. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Un pointeur vers la connexion de base de données. </td></tr>
+    <tr><td class="paramname">session</td><td>Un pointeur vers la session à créer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers la session créée. </dd></dl>
+
+</div>
+</div>
+<a id="ac2f9e83094f862431e498b600266f2fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2f9e83094f862431e498b600266f2fb">&#9670;&nbsp;</a></span>createTicket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structticket.html">Ticket</a>* createTicket </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structticket.html">Ticket</a> *&#160;</td>
+          <td class="paramname"><em>ticket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsession.html">Session</a> *&#160;</td>
+          <td class="paramname"><em>session</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structuser.html">User</a> *&#160;</td>
+          <td class="paramname"><em>user</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un nouveau ticket dans la base de données. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Un pointeur vers la connexion de base de données. </td></tr>
+    <tr><td class="paramname">ticket</td><td>Un pointeur vers le ticket à créer. </td></tr>
+    <tr><td class="paramname">session</td><td>Un pointeur vers la session associée au ticket. </td></tr>
+    <tr><td class="paramname">user</td><td>Un pointeur vers l'utilisateur qui achète le ticket. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers le ticket créé. </dd></dl>
+
+</div>
+</div>
+<a id="a3c02e2ad6109da33dbb21de526f4b7b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c02e2ad6109da33dbb21de526f4b7b4">&#9670;&nbsp;</a></span>createUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structuser.html">User</a>* createUser </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structuser.html">User</a> *&#160;</td>
+          <td class="paramname"><em>user</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Créé un nouvel utilisateur dans la base de données. Cette fonction prend en paramètre un objet MYSQL représentant la connexion à la base de données et un objet User contenant les informations du nouvel utilisateur à créer. </p>
+<p>Crée un nouvel utilisateur dans la base de données.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Un objet MYSQL représentant la connexion à la base de données. </td></tr>
+    <tr><td class="paramname">user</td><td>Un objet User contenant les informations du nouvel utilisateur à créer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers un objet User représentant le nouvel utilisateur créé, ou NULL si une erreur s'est produite. Exemple d'utilisation : <div class="fragment"><div class="line">MYSQL *db = mysql_init(NULL);</div>
+<div class="line">mysql_real_connect(db, <span class="stringliteral">&quot;localhost&quot;</span>, <span class="stringliteral">&quot;user&quot;</span>, <span class="stringliteral">&quot;password&quot;</span>, <span class="stringliteral">&quot;database&quot;</span>, 0, NULL, 0);</div>
+<div class="line"><a class="code" href="structuser.html">User</a> *<a class="code" href="structuser.html">user</a> = malloc(<span class="keyword">sizeof</span>(<a class="code" href="structuser.html">User</a>));</div>
+<div class="line"><a class="code" href="structuser.html">user</a>-&gt;firstName = <span class="stringliteral">&quot;John&quot;</span>;</div>
+<div class="line"><a class="code" href="structuser.html">user</a>-&gt;lastName = <span class="stringliteral">&quot;Doe&quot;</span>;</div>
+<div class="line"><a class="code" href="structuser.html">user</a>-&gt;rule = <span class="stringliteral">&quot;admin&quot;</span>;</div>
+<div class="line"><a class="code" href="structuser.html">user</a>-&gt;email = <span class="stringliteral">&quot;johndoe@example.com&quot;</span>;</div>
+<div class="line"><a class="code" href="structuser.html">user</a>-&gt;password = <span class="stringliteral">&quot;secret&quot;</span>;</div>
+<div class="line"><a class="code" href="structuser.html">User</a> *newUser = <a class="code" href="function-bd_8c.html#a3c02e2ad6109da33dbb21de526f4b7b4">createUser</a>(db, <a class="code" href="structuser.html">user</a>);</div>
+<div class="ttc" id="afunction-bd_8c_html_a3c02e2ad6109da33dbb21de526f4b7b4"><div class="ttname"><a href="function-bd_8c.html#a3c02e2ad6109da33dbb21de526f4b7b4">createUser</a></div><div class="ttdeci">User * createUser(MYSQL *db, User *user)</div><div class="ttdoc">Créé un nouvel utilisateur dans la base de données. Cette fonction prend en paramètre un objet MYSQL ...</div><div class="ttdef"><b>Definition:</b> function-bd.c:29</div></div>
+<div class="ttc" id="astructuser_html"><div class="ttname"><a href="structuser.html">user</a></div><div class="ttdef"><b>Definition:</b> struc.h:13</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a1f9c336ca172e32f2491e17258be5cfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f9c336ca172e32f2491e17258be5cfe">&#9670;&nbsp;</a></span>getEventByLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structevent.html">Event</a>* getEventByLabel </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>eventLabel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtient les plats associés à un événement donné par son étiquette. </p>
+<p>Récupère un événement à partir de son libellé.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Un pointeur vers une connexion MySQL. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1816267d81b64571aa0f732817072c44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1816267d81b64571aa0f732817072c44">&#9670;&nbsp;</a></span>getFilmByDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getFilmByDate </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>date</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère tous les films jouant à une certaine date. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Pointeur vers la base de données. </td></tr>
+    <tr><td class="paramname">date</td><td>Date à laquelle les films doivent être joués (au format "YYYY-MM-DD"). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a644cab1c403dd4092fdbc0767cf150ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a644cab1c403dd4092fdbc0767cf150ac">&#9670;&nbsp;</a></span>getPlatByEventLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getPlatByEventLabel </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>eventLabel</em>[20]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère les plats associés à un événement en fonction de son label. Cette fonction effectue une requête SQL pour récupérer les plats associés à un événement en fonction de son label. Les résultats sont affichés à l'écran. </p>
+<p>Affiche la liste des plats associés à un événement donné. Cette fonction affiche la liste des plats associés à l'événement dont le label est passé en paramètre.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Un pointeur vers une structure de connexion à la base de données MySQL. </td></tr>
+    <tr><td class="paramname">eventLabel</td><td>Le label de l'événement dont on souhaite récupérer les plats associés. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a55eeb5c87b6273f8fa81236b92ce30f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55eeb5c87b6273f8fa81236b92ce30f6">&#9670;&nbsp;</a></span>getPlatByLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structplat.html">Plat</a>* getPlatByLabel </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>platLabel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recherche un plat dans la base de données par son nom. </p>
+<p>Récupère un plat à partir de son libellé.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>un pointeur vers la connexion MySQL </td></tr>
+    <tr><td class="paramname">platLabel</td><td>le nom du plat recherché</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>un pointeur vers un objet Plat si le plat est trouvé, sinon NULL </dd></dl>
+
+</div>
+</div>
+<a id="a0fbcb8a0708f6c621d6a861ad6001901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fbcb8a0708f6c621d6a861ad6001901">&#9670;&nbsp;</a></span>getSessionByFilm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structsession.html">Session</a>* getSessionByFilm </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>film</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère la session d'un film donné. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Pointeur vers la base de données. </td></tr>
+    <tr><td class="paramname">film</td><td>Titre du film. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers la session correspondante, NULL si aucune session n'a été trouvée. </dd></dl>
+
+</div>
+</div>
+<a id="af309ac5fd96b728c5c30f97ee4789ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af309ac5fd96b728c5c30f97ee4789ad3">&#9670;&nbsp;</a></span>getUserByFirstEmail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structuser.html">User</a>* getUserByFirstEmail </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>email</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère un utilisateur à partir de son adresse email. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Pointeur vers la base de données. </td></tr>
+    <tr><td class="paramname">email</td><td>Adresse email de l'utilisateur. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers l'utilisateur correspondant, NULL si aucun utilisateur n'a été trouvé. </dd></dl>
+
+</div>
+</div>
+<a id="a4e06c1ce49cd7571cdb90e4061618418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e06c1ce49cd7571cdb90e4061618418">&#9670;&nbsp;</a></span>listerEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void listerEvent </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>db</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche la liste des événements dans la base de données. Cette fonction affiche la liste des événements stockés dans la base de données en utilisant le pointeur vers la connexion à la base de données passé en paramètre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>Le pointeur vers la connexion à la base de données. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

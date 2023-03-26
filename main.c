@@ -1,3 +1,16 @@
+/**
+ * @file main.c
+ * @author TAHO GNOMBLEHI BEN ARTHUR
+ * @brief Programme de gestion d'événements et de cinéma.
+ *
+ * @details Ce programme permet à l'utilisateur de créer des événements, de participer à des événements, de gérer des films
+ * et de regarder des films. Il utilise une base de données MySQL pour stocker les informations sur les événements,
+ * les utilisateurs, les plats, les réservations, les films et les sessions de cinéma.
+ *
+ * Le programme utilise les bibliothèques MySQL, Python et time.h.
+ */
+
+
 #include <mysql/mysql.h>
 #include <string.h>
 #include <stdio.h>
@@ -9,7 +22,12 @@
 #include "struc.h"
 #include "saisie.h"
 #include "function-bd.h"
-int main(int argc, char *argv[]){
+/**
+*@brief Fonction principale du programme
+
+*@return 0 si tout s'est bien passé, une valeur non nulle sinon
+*/
+int main(void){
     MYSQL *db = mysql_init(NULL);
 
     if (db==NULL){
@@ -46,6 +64,7 @@ int main(int argc, char *argv[]){
                 scanf("%s",nouveauOuAncien);
                 
                 if(strcmp(nouveauOuAncien, "O") == 0){
+                    // Créer un utilisateur à partir des entrées de l'utilisateur
                     User * user = saisieUser();
                     createUser(db, user);
                     Event * event = saisieEvent();
