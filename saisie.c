@@ -72,7 +72,7 @@ Event* saisieEvent() {
 }
 
 Plat * saisiePlat(){
-    printf("Création de plat\n");
+    printf("Choisir votre plat\n");
     Plat *plat = malloc(sizeof(Plat));
     printf("Label : ");
     scanf("%s", plat->label);
@@ -105,7 +105,7 @@ Film *saisieFilm(){
 }
 
 Place *saisiePlace(){
-    printf("Création d'une place\n");
+    printf("Choisir votre place\n");
     Place *place = malloc(sizeof(Place));
     printf("Numéro : ");
     scanf("%d", &place->number);

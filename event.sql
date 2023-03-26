@@ -54,7 +54,8 @@ CREATE TABLE `event` (
   `place` char(255) DEFAULT NULL,
   `date_event` timestamp NULL DEFAULT NULL,
   `label` char(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -64,7 +65,7 @@ CREATE TABLE `event` (
 
 LOCK TABLES `event` WRITE;
 /*!40000 ALTER TABLE `event` DISABLE KEYS */;
-INSERT INTO `event` VALUES (1,'cinema','Esatic','2023-02-12 00:00:00','coucou'),(2,'m','m','2023-03-20 00:00:00','m'),(3,'m','m','2023-02-25 00:00:00','m');
+--INSERT INTO `event` VALUES (1,'cinema','Esatic','2023-02-12 00:00:00','coucou'),(2,'m','m','2023-03-20 00:00:00','m'),(3,'m','m','2023-02-25 00:00:00','m');
 /*!40000 ALTER TABLE `event` ENABLE KEYS */;
 UNLOCK TABLES;
 

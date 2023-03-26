@@ -9,7 +9,7 @@
 #include "struc.h"
 #include "saisie.h"
 #include "function-bd.h"
-int main(void){
+int main(int argc, char *argv[]){
     MYSQL *db = mysql_init(NULL);
 
     if (db==NULL){
@@ -49,7 +49,7 @@ int main(void){
                     User * user = saisieUser();
                     createUser(db, user);
                     Event * event = saisieEvent();
-                    createEvent(db,event);
+                    createEvent(db,event,user);
                     Plat* plat = saisiePlat();
                     createPlat(db,plat,event);
                     do{
@@ -64,7 +64,7 @@ int main(void){
                     User * user = authenUser();
                     if(authentiferUser(db, user)){
                         Event * event = saisieEvent();
-                        createEvent(db,event);
+                        createEvent(db,event,user);
                         Plat* plat = saisiePlat();
                         createPlat(db,plat,event);
                         do{
@@ -208,12 +208,18 @@ int main(void){
                 break;
             }
             case 5:{
+                User * user = authenUser();
+                if(authentiferUser(db, user)){
+                    /*char *arguments[] = { "test_py.py", user->email, 0};
+                    PySys_SetArgv(1,arguments);*/
+                    Py_Initialize();
+                    FILE* fp = fopen("test_py.py", "r");
+                    PyRun_SimpleFile(fp, "test_py.py");
+                    fclose(fp);
+                    Py_Finalize();
+                    printf("Bonjour");
+                }
                 
-                Py_Initialize();
-                FILE* fp = fopen("test_py.py", "r");
-                PyRun_SimpleFile(fp, "test_py.py");
-                fclose(fp);
-                Py_Finalize();
                 break;
             }
             break;

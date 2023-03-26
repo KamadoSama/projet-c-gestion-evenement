@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
 import mysql.connector
+import sys
 
+#arguments = sys.argv[1:]
+#user_email = arguments[0]
 # Connexion à la base de données
 cnx = mysql.connector.connect(user='zeus', password='8716taho',
                               host='localhost',
@@ -18,7 +21,8 @@ cursor.execute(query)
 # Récupération des résultats
 noms_plats = []
 nombre_commandes = []
-couleurs = ['r', 'g', 'b', 'y', 'm', 'c']  # liste des couleurs
+couleurs = ['#33FFC7', '#3333FF', 'b', 'y', 'm', 'c', 'k', 'w', '#FF5733', '#6E0DD0']
+ # liste des couleurs
 for i, (nom, nombre) in enumerate(cursor):
     noms_plats.append(nom)
     nombre_commandes.append(nombre)
@@ -30,5 +34,5 @@ cursor.close()
 cnx.close()
 
 # Affichage de l'histogramme
-plt.xticks(rotation=90)
+plt.xticks(rotation=80)
 plt.show()

@@ -3,7 +3,7 @@
 #include "struc.h"
 #include <mysql/mysql.h>
 User* createUser(MYSQL * db,User * user);
-Event*createEvent(MYSQL * db,Event * event);
+Event*createEvent(MYSQL * db,Event * event,User * user);
 Ticket *createTicket(MYSQL *db,Ticket *ticket, Session * session, User *user);
 void createReservation(MYSQL * db, User * user, Place *  place, Plat * plat);
 Plat * createPlat(MYSQL * db, Plat *  plat, Event * event);

@@ -17,6 +17,7 @@ User *createUser(MYSQL *db, User *user)
      champ = mysql_fetch_row(resultat);
      user->id = atoi(champ[0]);
 }
+
 void listerEvent(MYSQL *db)
 {
      char query[] = "SELECT * FROM event";
@@ -221,13 +222,14 @@ bool authentiferUser(MYSQL *db, User *user)
           return true;
      }
 }
-Event *createEvent(MYSQL *db, Event *event)
+
+Event *createEvent(MYSQL *db, Event *event,User * user)
 {
      MYSQL_RES *resultat = NULL;
      MYSQL_ROW champ;
      int i = 0;
      char query[1000];
-     sprintf(query, "insert into event(type, place, date_event, label) values(\"%s\", \"%s\", \"%s\",\"%s\")", event->type, event->lieu, event->dateEvent, event->label);
+     sprintf(query, "insert into event(type, place, date_event, label,use_id) values(\"%s\", \"%s\", \"%s\",\"%s\",\"%d\")", event->type, event->lieu, event->dateEvent, event->label,user->id);
      mysql_query(db, query);
      char query2[] = "select last_insert_id()";
      mysql_query(db, query2);
