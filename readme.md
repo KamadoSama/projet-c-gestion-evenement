@@ -14,8 +14,9 @@ Ce projet est une application C qui permet de gérer des événement (mariage, a
 
 ## Exécution
 
-1. Compiler le code : `gcc *.c -I/usr/include/python3.10 `\`mysql_config --cflags --libs\`` -lpython3.10 -o main`
-2. Exécuter le programme : `./main`
+1. Compiler le code dans le terminal taper `make`
+2. Exécuter le programme : `./Gestion`
+3. Supprimer les fichier .O : `make clean`
 
 Le programme va se connecter à la base de données MySQL, récupérer les données nécessaires, les traiter en utilisant Python pour générer les graphiques, et les afficher à l'utilisateur.
 

@@ -1,3 +1,6 @@
+/**
+ * @file struc.c
+*/
 #ifndef STRUC_H
 #define STRUC_H
 typedef struct user User;
