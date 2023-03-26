@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gestion événement: Référence du fichier function-bd.c</title>
+<title>doc: Référence du fichier function-bd.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Gestion événement
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">doc
    </div>
   </td>
  </tr>
@@ -72,6 +71,11 @@ $(function() {
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;struc.h&quot;</code><br />
 <code>#include &lt;mysql/mysql.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de function-bd.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="function-bd_8c__incl.png" border="0" usemap="#afunction-bd_8c" alt=""/></div>
+</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
@@ -79,7 +83,7 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a3c02e2ad6109da33dbb21de526f4b7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Créé un nouvel utilisateur dans la base de données. Cette fonction prend en paramètre un objet MYSQL représentant la connexion à la base de données et un objet User contenant les informations du nouvel utilisateur à créer.  <a href="function-bd_8c.html#a3c02e2ad6109da33dbb21de526f4b7b4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3c02e2ad6109da33dbb21de526f4b7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e06c1ce49cd7571cdb90e4061618418"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a4e06c1ce49cd7571cdb90e4061618418">listerEvent</a> (MYSQL *db)</td></tr>
-<tr class="memdesc:a4e06c1ce49cd7571cdb90e4061618418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction permet de lister tous les événements présents dans la base de données. Elle affiche simplement les labels de chaque événement.  <a href="function-bd_8c.html#a4e06c1ce49cd7571cdb90e4061618418">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a4e06c1ce49cd7571cdb90e4061618418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la liste des événements dans la base de données. Cette fonction affiche la liste des événements stockés dans la base de données en utilisant le pointeur vers la connexion à la base de données passé en paramètre.  <a href="function-bd_8c.html#a4e06c1ce49cd7571cdb90e4061618418">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4e06c1ce49cd7571cdb90e4061618418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a644cab1c403dd4092fdbc0767cf150ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a644cab1c403dd4092fdbc0767cf150ac">getPlatByEventLabel</a> (MYSQL *db, char eventLabel[20])</td></tr>
 <tr class="memdesc:a644cab1c403dd4092fdbc0767cf150ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère les plats associés à un événement en fonction de son label. Cette fonction effectue une requête SQL pour récupérer les plats associés à un événement en fonction de son label. Les résultats sont affichés à l'écran.  <a href="function-bd_8c.html#a644cab1c403dd4092fdbc0767cf150ac">Plus de détails...</a><br /></td></tr>
@@ -96,9 +100,9 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a7526464e6e5d68db08ee4b9ffec4d59b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a7526464e6e5d68db08ee4b9ffec4d59b">authentiferUser</a> (MYSQL *db, <a class="el" href="structuser.html">User</a> *<a class="el" href="structuser.html">user</a>)</td></tr>
 <tr class="memdesc:a7526464e6e5d68db08ee4b9ffec4d59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Authentifie un utilisateur dans la base de données. Cette fonction vérifie si les informations d'authentification de l'utilisateur passées en paramètre correspondent à un utilisateur dans la base de données. Si l'utilisateur est authentifié, la fonction renvoie true, sinon elle renvoie false.  <a href="function-bd_8c.html#a7526464e6e5d68db08ee4b9ffec4d59b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a7526464e6e5d68db08ee4b9ffec4d59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad107d041e5e8c6e2be54beffefe24ca8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structevent.html">Event</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#ad107d041e5e8c6e2be54beffefe24ca8">createEvent</a> (MYSQL *db, <a class="el" href="structevent.html">Event</a> *<a class="el" href="structevent.html">event</a>, <a class="el" href="structuser.html">User</a> *<a class="el" href="structuser.html">user</a>)</td></tr>
-<tr class="memdesc:ad107d041e5e8c6e2be54beffefe24ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un nouvel événement dans la base de données.  <a href="function-bd_8c.html#ad107d041e5e8c6e2be54beffefe24ca8">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ad107d041e5e8c6e2be54beffefe24ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795bf925a246abd3a1984e7dc733db7c"><td class="memItemLeft" align="right" valign="top"><a id="a795bf925a246abd3a1984e7dc733db7c"></a>
+<a class="el" href="structevent.html">Event</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createEvent</b> (MYSQL *db, <a class="el" href="structevent.html">Event</a> *<a class="el" href="structevent.html">event</a>)</td></tr>
+<tr class="separator:a795bf925a246abd3a1984e7dc733db7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1816267d81b64571aa0f732817072c44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function-bd_8c.html#a1816267d81b64571aa0f732817072c44">getFilmByDate</a> (MYSQL *db, char *date)</td></tr>
 <tr class="memdesc:a1816267d81b64571aa0f732817072c44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère tous les films jouant à une certaine date.  <a href="function-bd_8c.html#a1816267d81b64571aa0f732817072c44">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1816267d81b64571aa0f732817072c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,51 +164,6 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>true si l'utilisateur est authentifié, false sinon. </dd></dl>
-
-</div>
-</div>
-<a id="ad107d041e5e8c6e2be54beffefe24ca8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad107d041e5e8c6e2be54beffefe24ca8">&#9670;&nbsp;</a></span>createEvent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structevent.html">Event</a>* createEvent </td>
-          <td>(</td>
-          <td class="paramtype">MYSQL *&#160;</td>
-          <td class="paramname"><em>db</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structevent.html">Event</a> *&#160;</td>
-          <td class="paramname"><em>event</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structuser.html">User</a> *&#160;</td>
-          <td class="paramname"><em>user</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Crée un nouvel événement dans la base de données. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">db</td><td>Un pointeur vers la connexion de base de données. </td></tr>
-    <tr><td class="paramname">event</td><td>Un pointeur vers l'événement à créer. </td></tr>
-    <tr><td class="paramname">user</td><td>Un pointeur vers l'utilisateur qui a créé l'événement. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers l'événement créé. </dd></dl>
 
 </div>
 </div>
@@ -777,11 +736,10 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cette fonction permet de lister tous les événements présents dans la base de données. Elle affiche simplement les labels de chaque événement. </p>
-<p>Affiche la liste des événements dans la base de données. Cette fonction affiche la liste des événements stockés dans la base de données en utilisant le pointeur vers la connexion à la base de données passé en paramètre.</p>
+<p>Affiche la liste des événements dans la base de données. Cette fonction affiche la liste des événements stockés dans la base de données en utilisant le pointeur vers la connexion à la base de données passé en paramètre. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">db</td><td>un pointeur vers la structure MYSQL qui représente la connexion à la base de données. </td></tr>
+    <tr><td class="paramname">db</td><td>Le pointeur vers la connexion à la base de données. </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['createevent_1',['createEvent',['../function-bd_8c.html#ad107d041e5e8c6e2be54beffefe24ca8',1,'createEvent(MYSQL *db, Event *event, User *user):&#160;function-bd.c'],['../function-bd_8h.html#ad107d041e5e8c6e2be54beffefe24ca8',1,'createEvent(MYSQL *db, Event *event, User *user):&#160;function-bd.c']]],
+  ['createevent_1',['createEvent',['../function-bd_8h.html#ad107d041e5e8c6e2be54beffefe24ca8',1,'function-bd.h']]],
   ['createfilm_2',['createFilm',['../function-bd_8c.html#a85cfa50a790ad4070a6e12846b111a61',1,'createFilm(MYSQL *db, Film *film, Session *session):&#160;function-bd.c'],['../function-bd_8h.html#a85cfa50a790ad4070a6e12846b111a61',1,'createFilm(MYSQL *db, Film *film, Session *session):&#160;function-bd.c']]],
   ['createplace_3',['createPlace',['../function-bd_8c.html#a8df4fb9e8e3dd4f7e5f5587e2d58b28d',1,'createPlace(MYSQL *db, Place *place, Event *event):&#160;function-bd.c'],['../function-bd_8h.html#a8df4fb9e8e3dd4f7e5f5587e2d58b28d',1,'createPlace(MYSQL *db, Place *place, Event *event):&#160;function-bd.c']]],
   ['createplat_4',['createPlat',['../function-bd_8c.html#ad85f2c9623c3c268cb933ec16a279598',1,'createPlat(MYSQL *db, Plat *plat, Event *event):&#160;function-bd.c'],['../function-bd_8h.html#ad85f2c9623c3c268cb933ec16a279598',1,'createPlat(MYSQL *db, Plat *plat, Event *event):&#160;function-bd.c']]],
